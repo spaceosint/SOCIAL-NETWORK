@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from "./components/Navbar/NavBar";
-import {BrowserRouter,
+import {HashRouter, BrowserRouter,
         Routes,
         Route,
         useLocation,
@@ -28,7 +28,7 @@ class App extends React.Component {
             return <PreloaderMain/>
         }
         return (
-            <BrowserRouter>
+            <HashRouter>
 
                 <div className="container">
                     <div className="row align-items-center">
@@ -63,7 +63,7 @@ class App extends React.Component {
                     </div>
                 </div>
 
-            </BrowserRouter>
+            </HashRouter>
         )
             ;
     }

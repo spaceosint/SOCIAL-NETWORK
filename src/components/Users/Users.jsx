@@ -13,7 +13,7 @@ let Users = ({currentPage, onPageChanged,totalUsersCount, pageSize,  ...props}) 
                            onPageChanged={onPageChanged}
                            totalUsersCount={totalUsersCount}
                            pageSize={pageSize}
-                           portionSize={10}
+                           portionSize={3}
                 />
 
             {
