@@ -1,0 +1,27 @@
+.nav{
+
+}
+.item a{
+    color: darkblue;
+    text-decoration: None;
+}
+.active{
+    background-color: black;
+}
+.item{
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: right;
+    margin: 4px 0 4px 0;
+}
+
+.link:hover{
+    color: black;
+    transition: .5s;
+}
+.settings{
+    margin-top: 54px;
+    text-align: center;
+}

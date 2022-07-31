@@ -1,0 +1,35 @@
+.header {
+    grid-area: header;
+    background-color: black;
+}
+
+.header img {
+    width: 120px;
+}
+.login{
+    color: #F7F6FB;
+    float: right;
+    margin-top: 20px;
+}
+.login span{
+
+    text-transform: uppercase;
+}
+.login span a{
+    text-decoration: None;
+
+}
+.login span a:hover{
+    color: white;
+    transition: .5s;
+}
+.logotip{
+    color: #F7F6FB;
+}
+.club{
+    color: cyan;
+    margin-left: 14px;
+}
+.span{
+
+}

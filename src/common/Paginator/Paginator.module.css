@@ -1,0 +1,18 @@
+.paginator{
+    margin: 10px;
+}
+.user_photo{
+    width: 75px;
+}
+
+.selectedPage{
+    font-weight: bold;
+}
+.pageNumber{
+    padding: 2px;
+    border: 1px solid grey;
+}
+.pageNumber.selectedPage{
+    font-weight: bold;
+    border-color: black;
+}

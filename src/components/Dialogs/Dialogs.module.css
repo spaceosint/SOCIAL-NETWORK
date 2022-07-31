@@ -1,0 +1,24 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogs_items {
+    padding: 10px;
+}
+.dialogs_items .active{
+ color: blue;
+}
+
+
+.message{
+    margin-bottom: 13px;
+}
+.message:last-child{
+    margin-bottom: 0;
+}
+.linkBg{
+    background-color: #eee;
+}
+.selection{
+    background-color: #eee;
+}
