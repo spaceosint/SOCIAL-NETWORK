@@ -1,11 +1,18 @@
 import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getStatusThunk, getUsersThunk, updateStatusThunk} from "../../redux/profile-reducer";
+import {
+    getStatusThunk,
+    getUsersThunk,
+    saveFormContactsThunk,
+    savePhotoThunk,
+    updateStatusThunk
+} from "../../redux/profile-reducer";
 import {compose} from "redux";
 import {withRouter} from "../../App";
 import {withAuthRedirect} from "../../hoc/AuthRedirect";
 import {Navigate} from "react-router-dom";
+import {getFormValues} from "redux-form";
 
 
 
@@ -27,8 +34,7 @@ import {Navigate} from "react-router-dom";
 // }
 
 class ProfileContainer extends React.Component{
-
-    componentDidMount() {
+    refreshProfile(){
         let userID = this.props.router.params.userID
         if (!userID){
             userID = this.props.authorizedUserId
@@ -39,14 +45,27 @@ class ProfileContainer extends React.Component{
         this.props.getUsersThunk(userID)
         this.props.getStatusThunk(userID)
     }
+    componentDidMount() {
+       this.refreshProfile()
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.router.params.userID !== prevProps.router.params.userID){
+            this.refreshProfile()
+        }
+
+    }
 
     render(){
     return (
         <Profile
             {...this.props}
+            saveFormContactsThunk={this.props.saveFormContactsThunk}
+            savePhoto={this.props.savePhotoThunk}
+            isOwner={!this.props.router.params.userID}
             profiel={this.props.profile}
             ststus={this.props.status}
             updateStatus={this.props.updateStatusThunk}
+            values = {this.props.values}
         />
         )
     }
@@ -59,12 +78,13 @@ let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     authorizedUserId: state.auth.userid,
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    values: getFormValues('contactsForm')(state),
 })
 
 export default compose(
     withRouter,
-    connect(mapStateToProps, {getUsersThunk, getStatusThunk, updateStatusThunk}),
+    connect(mapStateToProps, {getUsersThunk, getStatusThunk, updateStatusThunk, savePhotoThunk, saveFormContactsThunk}),
 )(ProfileContainer)
 
 // let WithDataContainerComponent = withRouter(withAuthRedirect(ProfileContainer))

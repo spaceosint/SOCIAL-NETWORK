@@ -32,6 +32,9 @@ const Profile = (props) => {
                     <Avatar avatar={props.profiel.photos.large}/>
                     </div>
                     <ProfileInfoWithHooks
+                        saveFormContactsThunk={props.saveFormContactsThunk}
+                        savePhoto={props.savePhoto}
+                        isOwner={props.isOwner}
                         fullName={props.profiel.fullName}
                         aboutMe = {props.profiel.aboutMe}
                         contacts={props.profiel.contacts}
@@ -39,6 +42,7 @@ const Profile = (props) => {
                         lookingForAJobDescription = {props.profiel.lookingForAJobDescription}
                         status={props.status}
                         updateStatus={props.updateStatus}
+                        values={props.values}
                     />
                 </div>
 

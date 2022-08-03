@@ -1,0 +1,46 @@
+.contacts{
+    background-color: lightslategray;
+    user-select: none;
+}
+.contacts:hover{
+    color: white;
+}
+.hidenContacts{
+    display: none;
+}
+.edit{
+
+
+
+}
+.save{
+    float: right;
+}
+.save span{
+    background-color: darkgreen;
+    color: white;
+    padding: 0 10px;
+    user-select: none;
+}
+.edit span{
+    background-color: #bb2d3b;
+    color: white;
+    padding: 0 5px;
+    user-select: none;
+}
+.edit span:hover{
+    color: black;
+}
+.save span:hover{
+    color: black;
+}
+.field{
+    display:inline;
+}
+#btn{
+    margin: 100px;
+    display: none;
+}
+.disableField:disabled{
+    background: #dddddd;
+}
