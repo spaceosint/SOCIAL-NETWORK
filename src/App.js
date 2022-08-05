@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import NavBar from "./components/Navbar/NavBar";
-import {HashRouter, BrowserRouter,
-        Routes,
-        Route,
-        useLocation,
-        useNavigate,
-        useParams} from "react-router-dom";
+import {
+    HashRouter, BrowserRouter,
+    Routes,
+    Route,
+    useLocation,
+    useNavigate,
+    useParams, Redirect
+} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -40,6 +42,10 @@ class App extends React.Component {
                                 </div>
                                 <div className="col-sm-10">
                                     <Routes>
+                                        <Route path='/'
+                                               element={<ProfileContainer/>}/>
+                                        <Route path='/logout'
+                                               element={<ProfileContainer/>}/>
                                         <Route path='/profile/:userID'
                                                element={<ProfileContainer/>}/>
                                         <Route path='/profile/'
